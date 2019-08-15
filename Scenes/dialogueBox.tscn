@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/RichTextLabel.gd" type="Script" id=1]
+
+[node name="Polygon2D" type="Polygon2D"]
+z_as_relative = false
+color = Color( 0.945098, 0.933333, 0.878431, 1 )
+offset = Vector2( -8, -8 )
+polygon = PoolVector2Array( 16, 16, 16, 80, 352, 80, 352, 16 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 176, 48 )
+current = true
+zoom = Vector2( 0.34, 0.18 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 48.0
+text = "Herrow"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

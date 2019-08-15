@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/pokemonFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/textTest2.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 208.0
+margin_bottom = 96.0
+custom_fonts/normal_font = ExtResource( 1 )
+scroll_active = false
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 80, 40 )
+current = true
+zoom = Vector2( 0.3, 0.25 )
