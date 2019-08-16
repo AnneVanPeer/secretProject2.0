@@ -102,15 +102,14 @@ func _process(delta):
 			var object_name = ray.get_collider().name
 			emit_signal("interaction", object_name)
 
-func can_move():
+func can_move_switch():
 	canMove = !canMove
 		
 
-		
-		
-		
-		
-		
-		
-		
-		
+
+func _on_NinePatchRect_menuIsOpen():
+	can_move_switch()
+
+
+func _on_NinePatchRect_menuIsClosed():
+	can_move_switch()
