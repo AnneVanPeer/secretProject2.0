@@ -10,7 +10,7 @@ func _ready():
 
 func _on_player_interaction(object_name):
 	if object_name == self.name:
-		print(object_name)
+		print("Hier komt het tekstje van Henk2")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -24,8 +24,6 @@ func _ready():
 	last_position = position
 	target_position = position
 	
-	$Camera2D/NinePatchRect.connect("menuIsOpen", self, "canMove")
-	$Camera2D/NinePatchRect.connect("menuIsClosed", self, "canMove")
 	
 func get_movedir():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -97,19 +95,18 @@ func _process(delta):
 			stop()
 	
 	#Check on enter press to see if player is colliding with an interactable object.
-	if Input.is_action_just_pressed("ui_accept"):
-		if ray.is_colliding():
-			var object_name = ray.get_collider().name
-			emit_signal("interaction", object_name)
+	if canMove:
+		if Input.is_action_just_pressed("ui_accept"):
+			if ray.is_colliding():
+				var object_name = ray.get_collider().name
+				emit_signal("interaction", object_name)
 
 func can_move_switch():
 	canMove = !canMove
 		
-
-
 func _on_NinePatchRect_menuIsOpen():
 	can_move_switch()
-
-
+	
 func _on_NinePatchRect_menuIsClosed():
 	can_move_switch()
+	
